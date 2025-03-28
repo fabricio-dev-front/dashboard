@@ -3,6 +3,7 @@
 import { useState } from "react";
 import * as Tabs from "@radix-ui/react-tabs";
 import { ItemTab } from "../ListTabs";
+import { MyDetails } from "@/shared/MyDetails";
 
 export const NavagationTab = () => {
   const [selected, setSelected] = useState("tab1");
@@ -33,6 +34,10 @@ export const NavagationTab = () => {
         />
         <ItemTab value="tab10" label="API" isSelect={selected === "tab10"} />
       </Tabs.List>
+
+      <Tabs.Content className="mt-6 h-screen" value="tab1">
+        <MyDetails />
+      </Tabs.Content>
     </Tabs.Root>
   );
 };
