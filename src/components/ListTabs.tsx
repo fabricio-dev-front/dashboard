@@ -1,6 +1,7 @@
 "use client";
 
 import * as Tabs from "@radix-ui/react-tabs";
+import { motion } from "framer-motion";
 
 type ItemTabProps = {
   value: string;
@@ -17,7 +18,10 @@ export const ItemTab = ({ value, label, isSelect = false }: ItemTabProps) => {
       {label}
 
       {isSelect && (
-        <div className="absolute right-0 left-0 -bottom-px bg-violet-700 h-0.5" />
+        <motion.div
+          layoutId="activeTab"
+          className="absolute right-0 left-0 -bottom-px bg-violet-700 h-0.5"
+        />
       )}
     </Tabs.Trigger>
   );
